@@ -15,6 +15,7 @@ const navigation: INavigation[] = [
   { name: 'Dashboard', href: '/' },
   { name: 'Students', href: '/student' },
   { name: 'Todo', href: '/todo' },
+  { name: 'Form', href: '/form' },
 ]
 
 const Navbar: React.FC = () => {
