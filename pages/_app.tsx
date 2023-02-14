@@ -1,3 +1,4 @@
+import LayoutCustom from '@/src/components/LayoutCustom'
 import { store } from '@/src/store'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
@@ -13,7 +14,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       <QueryClientProvider client={queryClient.current}>
         <Hydrate state={pageProps.dehydratedState}>
-          <Component {...pageProps} />
+          <LayoutCustom>
+            <Component {...pageProps} />
+          </LayoutCustom>
           <ReactQueryDevtools initialIsOpen={false} />
         </Hydrate>
       </QueryClientProvider>

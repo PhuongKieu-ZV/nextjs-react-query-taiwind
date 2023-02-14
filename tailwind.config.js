@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        phuong: ['Babylonica', 'sans-serif'],
+        phuong: ['Poppins', 'sans-serif'],
       },
       colors: {
         primary: '#154c79',
