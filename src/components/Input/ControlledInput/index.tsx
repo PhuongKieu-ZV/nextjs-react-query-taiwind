@@ -1,18 +1,19 @@
-import React, { memo } from 'react'
+import React from 'react'
 import { InputCustomProps } from '../type'
 import UncontrollInput from '../UncontrollInput'
 
 const ControlledInput = (props: InputCustomProps) => {
-  const { name, label, errors } = props
+  const { name, errors } = props
+
+  const errorMessage =
+    errors && errors[name] ? (errors[name] as any)?.message : ''
 
   return (
     <>
       <UncontrollInput {...props} />
-      {errors && errors[name]?.type === 'required' && (
-        <p className="text-red-500">{label ? label : 'Field'} is required</p>
-      )}
+      {errorMessage && <p className="text-red-500">{errorMessage}</p>}
     </>
   )
 }
 
-export default memo(ControlledInput)
+export default ControlledInput

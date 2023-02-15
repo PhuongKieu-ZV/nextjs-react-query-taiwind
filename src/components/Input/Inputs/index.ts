@@ -1,1 +1,6 @@
 export { default as CustomInputText } from './CustomInputText'
+export { default as CustomInputPassword } from './CustomInputPassword'
+export { default as CustomTextarea } from './CustomTextarea'
+export { default as CustomCheckbox } from './CustomCheckbox'
+export { default as CustomRadioGroup } from './CustomRadioGroup'
+export { default as CustomSelect } from './CustomSelect'

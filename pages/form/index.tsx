@@ -1,15 +1,46 @@
 import ControlledInput from '@/src/components/Input/ControlledInput'
 import { INPUT_TYPES } from '@/src/components/Input/type'
 import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+
+interface IForm {
+  firstName: string
+  password: string
+  model: string
+  country: string
+  description?: string
+  isRemember?: boolean
+}
+
+const initialValueForm: IForm = {
+  firstName: '',
+  password: '',
+  model: '1',
+  country: '',
+  description: '',
+  isRemember: false,
+}
+
+const schema = yup.object({
+  firstName: yup.string().required('Field is required'),
+  password: yup.string().required('Field is required'),
+  model: yup.string().required('Field is required'),
+  country: yup.string().required('Field is required'),
+})
 
 const FormDemo = () => {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm({ mode: 'onBlur' })
+  } = useForm<IForm>({
+    mode: 'onBlur',
+    resolver: yupResolver(schema),
+    defaultValues: { ...initialValueForm },
+  })
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: IForm) => {
     console.log(data)
   }
   return (
@@ -38,37 +69,40 @@ const FormDemo = () => {
                   inputType={INPUT_TYPES.TEXT}
                   label={'First Name'}
                   register={register}
-                  patternValidate={{ required: true }}
                   name="firstName"
                   errors={errors}
+                  placeholder={'First name'}
                 />
               </div>
               <div>
                 <ControlledInput
-                  inputType={INPUT_TYPES.TEXT}
-                  label={'Last Name'}
+                  inputType={INPUT_TYPES.PASSWORD}
+                  label={'Password'}
                   register={register}
-                  patternValidate={{ required: true }}
-                  name="lastName"
+                  name="password"
                   errors={errors}
+                  placeholder="Password"
+                />
+              </div>
+              <div>
+                <ControlledInput
+                  inputType={INPUT_TYPES.TEXTAREA}
+                  label={'Description'}
+                  register={register}
+                  name="description"
+                  placeholder="Description"
                 />
               </div>
             </div>
 
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                <ControlledInput
+                  inputType={INPUT_TYPES.CHECKBOX}
+                  label={'Remember me'}
+                  register={register}
+                  name="isRemember"
                 />
-                <label
-                  htmlFor="remember-me"
-                  className="ml-2 block text-sm text-gray-900"
-                >
-                  Remember me
-                </label>
               </div>
 
               <div className="text-sm">
@@ -79,6 +113,30 @@ const FormDemo = () => {
                   Forgot your password?
                 </a>
               </div>
+            </div>
+            <div className="flex items-center justify-between">
+              <ControlledInput
+                inputType={INPUT_TYPES.RADIO_GROUP}
+                register={register}
+                name="model"
+                customOptions={[
+                  { label: 'Model 1', value: '1' },
+                  { label: 'Model 2', value: '2' },
+                ]}
+                errors={errors}
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <ControlledInput
+                inputType={INPUT_TYPES.SELECT}
+                register={register}
+                name="country"
+                customOptions={[
+                  { label: 'Viet Name', value: 'VN' },
+                  { label: 'Singapore', value: 'SG' },
+                ]}
+                errors={errors}
+              />
             </div>
 
             <div>
