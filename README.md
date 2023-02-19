@@ -7,8 +7,9 @@
 ## React
 ### 1. React Query
 ### 2. Typescript
+### 3. Unit test
 
-## Redux 
+## Redux (vs React Context)
 ### 1. Redux toolkit (create slice)
 ### 2. Redux saga
 ### 3. Redux persist
