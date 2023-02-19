@@ -1,6 +1,7 @@
 import LayoutCustom from '@/src/components/LayoutCustom'
 import { store } from '@/src/store'
 import '@/styles/globals.css'
+import '@/styles/globals.scss'
 import type { AppProps } from 'next/app'
 import React from 'react'
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'

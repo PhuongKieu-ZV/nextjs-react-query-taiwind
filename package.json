@@ -53,6 +53,7 @@
     "@types/redux-persist": "^4.3.1",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
+    "sass": "^1.58.3",
     "tailwindcss": "^3.2.6"
   }
 }
