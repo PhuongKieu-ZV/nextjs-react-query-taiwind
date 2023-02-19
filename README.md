@@ -12,7 +12,12 @@
 
 ### 1. React Query
 
-### 2. Typescript (type vs interface)
+### 2. Typescript
+- interface vs type
+- class
+- method trong type và interface
+- partail và ?
+- dùng khai báo tường minh hay không tường minh
 
 ### 3. Unit test
 
