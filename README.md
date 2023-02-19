@@ -9,7 +9,7 @@
 ### 2. Typescript
 
 ## Redux 
-### 1. Redux toolkit
+### 1. Redux toolkit (create slice)
 ### 2. Redux saga
 ### 3. Redux persist
 
