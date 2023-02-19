@@ -2,6 +2,7 @@
 ### 1. CSS/SCSS/SASS
 ### 2. Cấu trúc CSS trong project
 ### 3. Tailwind
+### 4. Lazyload
 
 ## React
 ### 1. React Query
