@@ -6,7 +6,7 @@
 
 ## React
 ### 1. React Query
-### 2. Typescript
+### 2. Typescript (type vs interface)
 ### 3. Unit test
 
 ## Redux (vs React Context)
