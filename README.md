@@ -24,7 +24,7 @@
 ## Redux (vs React Context)
 
 ### 1. Redux toolkit (create slice)
-
+- map state, map dispatch
 ### 2. Redux saga
 
 ### 3. Redux persist
