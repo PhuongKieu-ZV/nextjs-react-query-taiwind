@@ -9,7 +9,7 @@
 ### 4. Lazyload
 
 ## React
-
+### 0. Cấu hình ENV
 ### 1. React Query
 
 ### 2. Typescript
